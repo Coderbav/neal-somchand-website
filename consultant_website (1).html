@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neal Somchand - Primary Research & KOL Engagement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e8edf2;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+        }
+
+        .logo {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #546e7a;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1a1a1a;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a7b 100%);
+            padding: 8rem 3rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80') center/cover;
+            opacity: 0.12;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            line-height: 1.15;
+            max-width: 800px;
+        }
+
+        .hero h1 strong {
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: #1e3a5f;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+        }
+
+        /* Services */
+        .services {
+            padding: 6rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-intro {
+            max-width: 700px;
+            margin-bottom: 4rem;
+        }
+
+        .section-intro h2 {
+            font-size: 2.25rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-intro p {
+            font-size: 1.1rem;
+            color: #546e7a;
+            line-height: 1.7;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            padding: 2.5rem;
+            background: #fafbfc;
+            border-left: 3px solid #2d5a7b;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: #f5f7f9;
+            transform: translateX(5px);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .service-card p {
+            color: #546e7a;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Capabilities */
+        .capabilities {
+            padding: 6rem 3rem;
+            background: #fafbfc;
+        }
+
+        .capabilities-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .capability {
+            text-align: center;
+        }
+
+        .capability-label {
+            font-size: 0.8rem;
+            color: #2d5a7b;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .capability-value {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+
+        /* Process */
+        .process {
+            padding: 6rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 200;
+            color: #e8edf2;
+            margin-bottom: 1rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .process-step p {
+            color: #546e7a;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 6rem 3rem;
+            background: #1e3a5f;
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.25rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: #1e3a5f;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            background: white;
+            color: #1e3a5f;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .submit-button:hover {
+            background: #f8f9fa;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d1f2d;
+            color: #7a8995;
+            text-align: center;
+            padding: 2rem 3rem;
+            font-size: 0.85rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.75rem;
+            }
+
+            .services-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .capabilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding: 6rem 2rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .services,
+            .capabilities,
+            .process,
+            .contact {
+                padding: 4rem 2rem;
+            }
+
+            .section-intro h2,
+            .contact h2 {
+                font-size: 1.85rem;
+            }
+
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">NEAL SOMCHAND</div>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#capabilities">Capabilities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Primary research for <strong>global pharmaceutical leaders</strong></h1>
+            <p>Expert qualitative research with Healthcare Professionals and Key Opinion Leaders across Japan and Asia-Pacific markets.</p>
+            <a href="#contact" class="cta-button">Discuss Your Research Needs</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="section-intro fade-in">
+            <h2>Research services</h2>
+            <p>Specialized primary research designed to deliver strategic insights for pharmaceutical and medical device companies navigating complex global markets.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <h3>HCP & KOL Interviews</h3>
+                <p>In-depth qualitative interviews with healthcare professionals and thought leaders to uncover treatment patterns, clinical perspectives, and unmet medical needs across therapeutic areas.</p>
+            </div>
+            
+            <div class="service-card fade-in">
+                <h3>Market Access Research</h3>
+                <p>Strategic insights from payers, formulary committees, and reimbursement authorities to inform pricing strategies and access pathways in key markets.</p>
+            </div>
+            
+            <div class="service-card fade-in">
+                <h3>Competitive Intelligence</h3>
+                <p>Systematic stakeholder interviews to assess competitive positioning, identify strategic threats, and uncover market opportunities throughout the product lifecycle.</p>
+            </div>
+            
+            <div class="service-card fade-in">
+                <h3>Japan Market Research</h3>
+                <p>Specialized primary research leveraging deep market knowledge and extensive networks to navigate Japan's unique regulatory and clinical landscape.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="capabilities" class="capabilities">
+        <div class="capabilities-container">
+            <div class="section-intro fade-in">
+                <h2>Capabilities</h2>
+                <p>Cross-functional expertise across therapeutic areas, geographies, and stakeholder groups.</p>
+            </div>
+            
+            <div class="capabilities-grid">
+                <div class="capability fade-in">
+                    <div class="capability-label">Therapeutic Areas</div>
+                    <div class="capability-value">Oncology<br>Immuno-Oncology<br>Orphan Diseases</div>
+                </div>
+                
+                <div class="capability fade-in">
+                    <div class="capability-label">Geographic Focus</div>
+                    <div class="capability-value">Japan<br>Asia-Pacific<br>EU Markets</div>
+                </div>
+                
+                <div class="capability fade-in">
+                    <div class="capability-label">Stakeholders</div>
+                    <div class="capability-value">HCPs & KOLs<br>Payers<br>Formulary Committees</div>
+                </div>
+                
+                <div class="capability fade-in">
+                    <div class="capability-label">Experience</div>
+                    <div class="capability-value">10+ Years<br>Pharma Consulting<br>Deallus Principal</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <div class="section-intro fade-in">
+            <h2>Research process</h2>
+            <p>A rigorous, proven methodology for delivering actionable insights.</p>
+        </div>
+        
+        <div class="process-grid">
+            <div class="process-step fade-in">
+                <div class="step-number">01</div>
+                <h3>Design</h3>
+                <p>Define research objectives and methodology tailored to strategic priorities.</p>
+            </div>
+            
+            <div class="process-step fade-in">
+                <div class="step-number">02</div>
+                <h3>Recruit</h3>
+                <p>Identify and engage target respondents through established networks.</p>
+            </div>
+            
+            <div class="process-step fade-in">
+                <div class="step-number">03</div>
+                <h3>Execute</h3>
+                <p>Conduct interviews with structured guides and expert facilitation.</p>
+            </div>
+            
+            <div class="process-step fade-in">
+                <div class="step-number">04</div>
+                <h3>Deliver</h3>
+                <p>Synthesize findings into strategic recommendations and actionable insights.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>Start a conversation</h2>
+            
+            <form class="contact-form fade-in" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="research-type">Research Type</label>
+                        <select id="research-type" name="research-type">
+                            <option value="">Select</option>
+                            <option value="hcp-kol">HCP/KOL Interviews</option>
+                            <option value="market-access">Market Access</option>
+                            <option value="competitive">Competitive Intelligence</option>
+                            <option value="custom">Custom Research</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Research Objectives</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Submit Enquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Neal Somchand, MSc | Based in Tokyo, Japan</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Form submit
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you. I will respond within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
